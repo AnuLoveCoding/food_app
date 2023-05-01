@@ -5,7 +5,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget singalProducts(){
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 5),
+      margin: EdgeInsets.symmetric(horizontal: 3),
       height: 260,
       width: 160,
       decoration: BoxDecoration(

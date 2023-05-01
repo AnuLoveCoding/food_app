@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/screens/home_screen/home_screen.dart';
 
 import 'auth/sign_in.dart';
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: SignIn(),
+      home: HomeScreen(),
     );
   }
 }

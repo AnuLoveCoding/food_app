@@ -5,6 +5,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget singalProducts(){
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 5),
       height: 260,
       width: 160,
       decoration: BoxDecoration(
@@ -122,7 +123,7 @@ class HomeScreen extends StatelessWidget {
 
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
-        child: Column(
+        child: ListView(
           children: [
             Container(
               height: 150.0,
@@ -176,11 +177,40 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 5.0,),
-            Row(
-              children: [
-
-              ],
-            )
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  singalProducts(),
+                  singalProducts(),
+                  singalProducts(),
+                  singalProducts(),
+                  singalProducts(),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Fresh Fruits',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0),),
+                  Text('view all',style: TextStyle(color: Colors.grey,fontSize: 15.0),),
+                ],
+              ),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  singalProducts(),
+                  singalProducts(),
+                  singalProducts(),
+                  singalProducts(),
+                  singalProducts(),
+                ],
+              ),
+            ),
           ],
         ),
       ),

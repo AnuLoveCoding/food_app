@@ -94,11 +94,91 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
+  Widget listTitle({ IconData? icon,  String? title}){
+    return  ListTile(
+      leading: Icon(Icons.home),
+      title: Text(title!,style: TextStyle(color: Colors.black45),),
+    ) ;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffcbcbcb),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: Container(
+          color: Color(0xffd1ad17),
+          child: ListView(
+            children: [
+              DrawerHeader(
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.white54,
+                        radius: 43,
+                        child: CircleAvatar(
+                          radius: 40.0,
+                          backgroundColor: Colors.yellow,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20.0,),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                           Text('Welcome Guest'),
+                          SizedBox(
+                            height: 7.0,),
+                          Container(
+                            height: 30.0,
+                            child: OutlinedButton(
+                              onPressed: (){},
+                              child: Text('Login'),
+                                style: ButtonStyle(
+                                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                        RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(15.0),
+                                            side: BorderSide(
+                                               width: 2,
+                                            )
+                                        ),
+                                    ),
+                                ),
+                            ),
+                          ),
+
+                        ],
+                      )
+                    ],
+                  ),
+              ),
+              listTitle(icon: Icons.home_outlined,title: 'Home'),
+              listTitle(icon: Icons.shop_outlined,title: 'Review Cart'),
+              listTitle(icon: Icons.person,title: 'My Profile'  ),
+              listTitle(icon: Icons.notifications_none_rounded,title: 'Notification'  ),
+              listTitle(icon: Icons.star_outline,title: 'Rating & Review'  ),
+              listTitle(icon: Icons.favorite_border_outlined,title: 'Wishlist'  ),
+              listTitle(icon: Icons.copy,title: 'Raise a Complaint'  ),
+              listTitle(icon: Icons.format_quote_outlined,title: 'FAQs'  ),
+              Container(
+                height: 350,
+                child: Column(
+                  children: [
+                    Text('Contact Support'),
+                    SizedBox(height:10 ,),
+                    Row(
+                      children: [
+                        Text('Call us: '),
+
+                      ],
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
         title: Text('Home',style: TextStyle(color: Colors.black,fontSize: 17.0),),
